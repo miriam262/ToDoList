@@ -24,6 +24,7 @@
 #COPY --from=publish /app/publish .
 #ENTRYPOINT ["dotnet", "TodoApi.dll"]
 # Base image
+# Base image
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
 WORKDIR /app
 EXPOSE 80
@@ -32,9 +33,9 @@ EXPOSE 443
 # Build image
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["server/TodoApi.csproj", "server/"]  # מבטיחים העתקה נכונה
+COPY ["server/TodoApi.csproj", "server/"]  # מעתיקים את קובץ ה-csproj מתוך תיקיית server
 RUN dotnet restore "server/TodoApi.csproj"
-COPY server/ .  # העתקת כל הקבצים מתוך תיקיית server
+COPY server/ .  # מעתיקים את כל התוכן מתוך תיקיית server
 
 # Build the app
 WORKDIR "/src/."
