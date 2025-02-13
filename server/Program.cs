@@ -105,20 +105,20 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions
     ForwardedHeaders.XForwardedProto
 });
 
-if (builder.Environment.IsDevelopment())
-{
+//if (builder.Environment.IsDevelopment())
+//{
     app.UseSwaggerUI(options =>
     {
         options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
         options.RoutePrefix = string.Empty;
     });
-}
+//}
 
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+//}
 
 app.UseAuthentication();
 
@@ -127,7 +127,7 @@ app.UseAuthorization();
 app.MapControllers();
 // app.MapControllers();
 
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/", () => "Hello World!\n welcome to my website");
 app.MapGet("/todos", async (ToDoDbContext dbContext) =>
 {
     var task = await dbContext.Items.ToListAsync();
