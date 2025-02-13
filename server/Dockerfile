@@ -35,7 +35,8 @@ FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["server/TodoApi.csproj", "server/"]  # מעתיקים את קובץ ה-csproj מתוך תיקיית server
 RUN dotnet restore "server/TodoApi.csproj"
-COPY server/ .  # מעתיקים את כל התוכן מתוך תיקיית server
+COPY ./server /src/server
+  # מעתיקים את כל התוכן מתוך תיקיית server
 
 # Build the app
 WORKDIR "/src/."
