@@ -70,9 +70,9 @@ RUN dotnet restore "TodoApi.csproj"
 COPY . . 
 RUN dotnet publish "TodoApi.csproj" -c Release -o /app/publish
 
-FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
-WORKDIR /app
-COPY --from=build /app/publish .
-ENTRYPOINT ["dotnet", "TodoApi.dll"]
+#FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
+#WORKDIR /app
+#COPY --from=build /app/publish .
+#ENTRYPOINT ["dotnet", "TodoApi.dll"]
 
 
