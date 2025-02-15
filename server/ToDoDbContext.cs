@@ -62,7 +62,7 @@ public partial class ToDoDbContext : DbContext
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.DateTime)
                 .HasColumnType("datetime")
-                .HasColumnName("date_time");
+                .HasColumnName("DateTime");
 
             // entity.Property(e => e.DateTime)
             //              .HasDefaultValueSql("CURRENT_TIMESTAMP")
