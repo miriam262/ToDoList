@@ -72,7 +72,7 @@ public partial class ToDoDbContext : DbContext
             entity.Property(e => e.Ip)
                 .HasMaxLength(255)
                 .HasColumnName("ip");
-            entity.Property(e => e.IsValid).HasColumnName("is_valid");
+            entity.Property(e => e.IsValid).HasColumnName("isValid");
             entity.Property(e => e.UserId).HasColumnName("user_id");
             //my code
             // entity.HasOne(e => e.User).WithMany(p => p.Sessions)
