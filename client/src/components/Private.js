@@ -13,6 +13,7 @@ export default function Private() {
 
   async function getTodos() {
     const todos = await service.getTasks();
+    alert(todos);
     setTodos(todos);
   }
 
@@ -35,6 +36,7 @@ export default function Private() {
 
   useEffect(() => {
     const token = localStorage.getItem("access_token");
+    alert(token);
     if (token) {
       getTodos();
     }
