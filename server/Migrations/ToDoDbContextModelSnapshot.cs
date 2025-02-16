@@ -76,7 +76,7 @@ namespace TodoApi.Migrations
 
                     b.Property<bool>("IsValid")
                         .HasColumnType("tinyint(1)")
-                        .HasColumnName("isValid");
+                        .HasColumnName("IsValid");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int")
