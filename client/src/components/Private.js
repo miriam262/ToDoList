@@ -99,7 +99,7 @@ export default function Private() {
             </header>
             <section className="main" style={{ display: "block" }}>
               <ul className="todo-list">
-                {alert(todos)&&todos.map((todo) => {
+                {todos.map((todo) => {
                   return (
                     <li
                       className={todo.isComplete ? "completed" : ""}
