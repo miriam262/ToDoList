@@ -57,7 +57,7 @@ public partial class ToDoDbContext : DbContext
 
             entity.ToTable("sessions");
 
-            entity.HasIndex(e => e.UserId, "user_id");
+            entity.HasIndex(e => e.UserId, "UserId");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.DateTime)
@@ -71,9 +71,9 @@ public partial class ToDoDbContext : DbContext
 
             entity.Property(e => e.Ip)
                 .HasMaxLength(255)
-                .HasColumnName("ip");
+                .HasColumnName("Ip");
             entity.Property(e => e.IsValid).HasColumnName("IsValid");
-            entity.Property(e => e.UserId).HasColumnName("user_id");
+            entity.Property(e => e.UserId).HasColumnName("UserId");
             //my code
             // entity.HasOne(e => e.User).WithMany(p => p.Sessions)
             //     .HasForeignKey(e => e.UserId)

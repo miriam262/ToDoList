@@ -72,7 +72,7 @@ namespace TodoApi.Migrations
                     b.Property<string>("Ip")
                         .HasMaxLength(255)
                         .HasColumnType("varchar(255)")
-                        .HasColumnName("ip");
+                        .HasColumnName("Ip");
 
                     b.Property<bool>("IsValid")
                         .HasColumnType("tinyint(1)")
@@ -80,12 +80,12 @@ namespace TodoApi.Migrations
 
                     b.Property<int>("UserId")
                         .HasColumnType("int")
-                        .HasColumnName("user_id");
+                        .HasColumnName("UserId");
 
                     b.HasKey("Id")
                         .HasName("PRIMARY");
 
-                    b.HasIndex(new[] { "UserId" }, "user_id");
+                    b.HasIndex(new[] { "UserId" }, "UserId");
 
                     b.ToTable("sessions", (string)null);
                 });
